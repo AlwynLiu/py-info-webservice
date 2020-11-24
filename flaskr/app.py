@@ -15,7 +15,7 @@ name = 'runoob'     # 字符串
 
 @app.route('/')
 def hello_world():
-    return '测试'
+    return '测试0001'
 
 
 # @app.route('/hello', methods=['post'])
