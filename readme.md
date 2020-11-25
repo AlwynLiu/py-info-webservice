@@ -1,9 +1,10 @@
-# 学习Python的练习项目 
+# learn Python project  
 
-- 基础语法
+- python grammer
 - web service
-- 处理批量任务
-- 创造价值
+- Repetitive tasks
+- create value
 
-## 学习的阶段性里程碑 
-爬虫抓取一些英语考研词汇，用来考研使用
+## mile stone 
+
+Crawler to grab some English vocabulary
