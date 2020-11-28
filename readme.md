@@ -22,3 +22,6 @@ source /venv/Scripts/activate
 pip3 install flask
 FLASK_APP=flaskr/app.py flask run
 ```
+
+## directory
+

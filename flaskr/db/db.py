@@ -12,7 +12,7 @@ try:
     #     # Create a new record
     #     # sql = "INSERT INTO `id` `author` VALUES (2, 'alvin')"
     #     sql = "INSERT INTO `novel_info` (`author`) VALUES (%s)"
-    #     cursor.execute(sql, ('千里无法'))
+    #     cursor.execute(sql, ('千里无风'))
     #     # cursor.execute(sql)
     #
     # # connection is not autocommit by default. So you must commit to save
