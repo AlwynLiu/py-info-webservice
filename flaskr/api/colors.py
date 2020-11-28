@@ -5,52 +5,6 @@ app = Flask(__name__)
 swagger = Swagger(app)
 
 
-
-
-@app.route('/colors/<palette>/', methods=['post'])
-def colors(palette):
-    """获取颜色数据对象
-    This is using docstrings for specifications.
-    ---
-    tags:
-      - 获取数据
-    parameters:
-      - name: palette
-        in: path
-        type: string
-        enum: ['all', 'rgb', 'cmyk']
-        required: true
-        default: all
-    definitions:
-      Palette:
-        type: object
-        properties:
-          palette_name:
-            type: array
-            items:
-              $ref: '#/definitions/Color'
-      Color:
-        type: string
-    responses:
-      200:
-        description: 颜色的列表(数据对象)
-        schema:
-          $ref: '#/definitions/Palette'
-        examples:
-          rgb: ['red', 'green', 'blue']
-    """
-    all_colors = {
-        'cmyk': ['cian', 'magenta', 'yellow', 'black'],
-        'rgb': ['red', 'green', 'blue']
-    }
-    # if palette == 'all':
-    #     result = all_colors
-    # else:
-    #     result = {palette: all_colors.get(palette)}
-
-    return jsonify(all_colors)
-
-
 @app.route('/user/login/', methods=['post'])
 def login():
     """ 登入系统
@@ -65,16 +19,6 @@ def login():
         enum: ['全部', 'rgb', 'cmyk']
         required: true
         default: all
-    definitions:
-      Palette:
-        type: object
-        properties:
-          palette_name:
-            type: array
-            items:
-              $ref: '#/definitions/Color'
-      Color:
-        type: string
     responses:
       200:
         description: 颜色的列表(数据对象)
@@ -100,16 +44,6 @@ def loginout():
         enum: ['全部', 'rgb', 'cmyk']
         required: true
         default: all
-    definitions:
-      Palette:
-        type: object
-        properties:
-          palette_name:
-            type: array
-            items:
-              $ref: '#/definitions/Color'
-      Color:
-        type: string
     responses:
       200:
         description: 颜色的列表(数据对象)
@@ -129,7 +63,7 @@ def deleteUser():
     tags:
       - 登入登出
     parameters:
-      - name: userName
+      - name: UserInfo
         in: path
         type: string
         required: true
@@ -137,20 +71,60 @@ def deleteUser():
         in: path
         type: string
         required: true
-    definitions:
-      userName:
-        type: string
-      password:
-        type: string
     responses:
       200:
         description: 删除了对象
         schema:
-          $ref: '#/definitions/Palette'
-        examples: '注销失败'
+          id: UserInfo
+          properties:
+            UserName:
+              type: string
+              default: '千里无风'
+            Password:
+              type: string
+              default: '1234456'
+        examples: 注销失败
+      404:
+        description: 数据找不到了
+        examples: 就是数据找不到了
 
     """
     return '测试loginout api'
 
 
-app.run(debug=True)
+@app.route('/order/queryList', methods=['get'])
+def getOrderList():
+    """ 获取订单列表数据
+    获取订单列表数据.
+    ---
+    tags:
+      - 订单处理
+    responses:
+      200:
+        description: 查询所有产生的订单数据
+        schema:
+          id: OrderInfo
+          properties:
+            OrderId:
+              type: string
+              default: '23123213781937829137829'
+            OrderName:
+              type: string
+              default: '魔毯'
+            OrderPrice:
+                type: string
+                default: $ 892301
+          examples: {
+            "orderId": 123123213213,
+            "orderName": '毛毯',
+            "orderPrice": "$1321321"
+          }
+    """
+    return {
+        "orderId": 123123213213,
+        "orderName": '毛毯',
+        "orderPrice": "$1321321"
+    }
+
+
+app.run()
