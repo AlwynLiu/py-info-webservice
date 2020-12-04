@@ -22,8 +22,6 @@ def login():
     responses:
       200:
         description: 颜色的列表(数据对象)
-        schema:
-          $ref: '#/definitions/Palette'
         examples:
           rgb: ['red', 'green', 'blue']
     """
@@ -47,8 +45,6 @@ def loginout():
     responses:
       200:
         description: 颜色的列表(数据对象)
-        schema:
-          $ref: '#/definitions/Palette'
         examples:
           rgb: ['red', 'green', 'blue']
     """
