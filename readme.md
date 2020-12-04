@@ -21,6 +21,14 @@ virtualenv venv
 source /venv/Scripts/activate
 pip3 install flask
 FLASK_APP=flaskr/app.py flask run
+or python flaskr/api/colors.py
+```
+update pip version
+```
+python -m pip install --upgrade pip
+pip install flasgger
+
+http://127.0.0.1:5000/apidocs
 ```
 
 ## directory
