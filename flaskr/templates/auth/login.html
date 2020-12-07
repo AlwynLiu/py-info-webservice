@@ -1,15 +1,25 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block header %}
-  <h1>{% block title %}Log In{% endblock %}</h1>
-{% endblock %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
 
-{% block content %}
-  <form method="post">
-    <label for="username">Username</label>
-    <input name="username" id="username" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Log In">
+<body>
+  <h1>用户登录</h1>
+  <form action="/auth/login" method="post">
+    <fieldset>
+      <legend>用户名：</legend>
+      <input type="text">
+    </fieldset>
+    <fieldset>
+      <legend>密码：</legend>
+      <input type="password">
+    </fieldset>
+    <button type="submit">登录</button>
   </form>
-{% endblock %}
+</body>
+
+</html>
