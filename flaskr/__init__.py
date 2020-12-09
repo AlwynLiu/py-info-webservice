@@ -35,10 +35,17 @@ from flask import Flask
 from flasgger import Swagger
 
 from .api import auth
+from flask_jsonrpc import JSONRPC
 
 
 app = Flask(__name__)
 swagger = Swagger(app)
+
+jsonrpc = JSONRPC(app, '/api', enable_web_browsable_api=True)
+
+@jsonrpc.method('App.index')
+def index() -> str:
+    return 'welcome to Flask JSON-RPC'
 
 
 app.register_blueprint(auth.bp)
