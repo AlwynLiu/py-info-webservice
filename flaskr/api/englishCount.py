@@ -51,6 +51,8 @@ def postFile():
     wordstring = replaceStr(wordstring)
     wordlist = wordstring.split()
 
+    # 单词数组去重
+    wordlist = list(set(wordlist))
     xmlString = ''
     for word in wordlist:
         if len(word) > 2 :
