@@ -48,18 +48,28 @@ def postFile():
     #     print(content)
     # 读取文本内容在单词频数
     wordstring = bytes.decode(wordstring)
+    print(wordstring)
     wordstring = replaceStr(wordstring)
     wordlist = wordstring.split()
     wordfreq = []
     for w in wordlist:
-        if(len(w) > 2):
+        if len(w) > 2:
             wordfreq.append(wordlist.count(w))
         else:
             wordlist.remove(w)
     d = dict(zip(wordlist, wordfreq))
-    return json.dumps(d, ensure_ascii=False)
+    xmlString = ''
+    for word in wordlist:
+        if len(word) > 2 :
+            xmlString += formatYoudaoXml(word, request.form['textText'])
+    return '<wordbook>{}</wordbook>'.format(xmlString)
+    # return json.dumps(d, ensure_ascii=False)
+    # return json.dumps(wordlist)
 
 def replaceStr(str):
-    return str.replace('.', '').replace('{', '')\
-        .replace('}','').replace('(','')\
-        .replace(')','').replace('/*!','')
+    return str.replace('.', '').replace('{', '').replace('}', '').replace('(', '').replace(')', '').replace('/*!', '').replace('《', '').replace('》', '')
+
+
+def formatYoudaoXml(word, tags='未分组'):
+    return '''<item><word>{word}</word>
+    <tags>{tags}</tags></item>'''.format(word=word, tags=tags)
