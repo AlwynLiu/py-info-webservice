@@ -36,6 +36,7 @@ from flasgger import Swagger
 
 from .api import auth
 from .api import englishCount
+from .api import operationDb
 
 
 app = Flask(__name__)
@@ -44,3 +45,4 @@ swagger = Swagger(app)
 
 app.register_blueprint(auth.bp)
 app.register_blueprint(englishCount.bp)
+app.register_blueprint(operationDb.bp)
