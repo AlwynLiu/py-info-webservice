@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <main>
+        <form method="post" action="./wordCount" enctype="multipart/form-data">
+            <fieldset>
+                <legend>上传需要处理的文件：</legend>
+                <input name="uploadFile" type="file">
+            </fieldset>
+            <fieldset>
+                <legend>测试填写输入数据：</legend>
+                <input type="text" name="textText">
+            </fieldset>
+            <button type="submit">提交文件</button>
+        </form>
+    </main>
+
+    <script type="text/javascript" src="../../static/vue.js"></script>
+
+    <script>
+        var vm = new Vue({
+            create() {
+                console.log(6666)
+            }
+        })
+
+    </script>
+</body>
+</html>
