@@ -24,5 +24,7 @@ try:
         cursor.execute(sql)
         result = cursor.fetchall()
         print(result)
+except:
+    raise
 finally:
     connection.close()
