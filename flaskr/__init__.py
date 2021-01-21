@@ -1,6 +1,8 @@
 from .api import operationDb
 from .api import englishCount
 from .api import flaskWebApi
+from .api import index
+
 from flasgger import Swagger
 import os
 
@@ -82,3 +84,5 @@ app.register_blueprint(auth.bp)
 app.register_blueprint(englishCount.bp)
 app.register_blueprint(operationDb.bp)
 app.register_blueprint(flaskWebApi.bp)
+app.register_blueprint(index.bp)
+

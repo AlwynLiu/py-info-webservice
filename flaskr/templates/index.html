@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Home Page</title>
+    <title>Python练习页面</title>
 </head>
 <body>
-    <ul id="navigation">
-    {% for item in navigation %}
-        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-    {% endfor %}
+    {% include './header.html' %}
+    <ul>
+        <li><a href="./flaskWebApi/user/alvin">访问jinja2页面</a></li>
     </ul>
 
-    <h1>My Home Page</h1>
-    {{ a_variable }}
+
+
 
 </body>
 </html>
