@@ -10,7 +10,7 @@ class BaseConfig(object):
     SECRET_KEY = "secret_key"                   # session秘钥配置
     TESTING = False
     DATABASE_URI = 'sqlite://:memory'
-    JSONIFY_MIMETYPE = "application/json",      # 设置jsonify响应时返回的contentype类型
+    JSONIFY_MIMETYPE = "application/json"       # 设置jsonify响应时返回的contentype类型
 
 
 class ProductionConfig(BaseConfig):

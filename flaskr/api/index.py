@@ -10,21 +10,12 @@ bp = Blueprint('index', __name__)
 
 
 @bp.route('/', methods=['get'])
-def update():
-    """ 更新数据
-    批量更新数据库数据，从其他表的数据中更新
+def index():
+    """
+    显示首页数据
     ---
     tags:
-      - 数据库操作
-    parameters:
-      - sql:
-        type: string
-        default: all
-    responses:
-      200:
-        description: success
-        examples:
-          data: success
+        - 首页
     """
     return render_template("./index.html")
 

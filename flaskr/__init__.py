@@ -82,7 +82,8 @@ def create_app(test_config=None):
 
 app.register_blueprint(auth.bp)
 app.register_blueprint(englishCount.bp)
-app.register_blueprint(operationDb.bp)
 app.register_blueprint(flaskWebApi.bp)
 app.register_blueprint(index.bp)
+
+app.register_blueprint(operationDb.bp)
 
