@@ -5,7 +5,7 @@
 
 
 class BaseConfig(object):
-    ENV = None                                  # 虚拟环境，当前项目运行环境
+    ENV = "default"                                  # 虚拟环境，当前项目运行环境
     DEBUG = True                                # 是否开启debug模式
     SECRET_KEY = "secret_key"                   # session秘钥配置
     TESTING = False
@@ -15,11 +15,13 @@ class BaseConfig(object):
 
 class ProductionConfig(BaseConfig):
     # DATABASE_URI = 'production'
+    ENV = "Production"
     pass
 
 
 class DevelopmentConfig(BaseConfig):
     # DATABASE_URI = 'Development'
+    ENV = "Development"
     pass
 
 
