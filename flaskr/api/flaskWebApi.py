@@ -4,6 +4,7 @@
 """
 
 from flask import Blueprint, render_template, request
+import uuid
 import string, json
 
 
@@ -23,3 +24,9 @@ def user(name):
     """
     coments = ['啦啦啦', '哈哈哈', '哦嚯嚯嚯']
     return render_template('./flaskWebApi.html', name=name, coments=coments)
+
+
+@bp.route('/user/uuid', methods=['get'])
+def user_uuid():
+    uuid_str = uuid.uuid4()
+    return uuid_str.hex

@@ -2,6 +2,7 @@ from .api import operationDb
 from .api import englishCount
 from .api import flaskWebApi
 from .api import index
+from .api import get_os_info
 
 from flasgger import Swagger
 import os
@@ -86,4 +87,5 @@ app.register_blueprint(flaskWebApi.bp)
 app.register_blueprint(index.bp)
 
 app.register_blueprint(operationDb.bp)
+app.register_blueprint(get_os_info.bp)
 
