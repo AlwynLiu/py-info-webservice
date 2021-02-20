@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='./styles/flaskWebApi.css') }}">
+<header>这是一个固定的头部来着<div id="my-id">
+    {{ message }}
+</div></header>
+<script>
+    var vm = new Vue({
+        el: "#my-id",
+        data: {
+            "message": "数据哦"
+        },
+        template: `<div>{{ message }}直接显示数据试试</div>`,
+        mounted() {
+            this.message = '大数据哦'
+            console.log(this.message)
+        }
+    })
+</script>

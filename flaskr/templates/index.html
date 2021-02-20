@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Python练习页面</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='./styles/index.css') }}">
 </head>
 <body>
-    {% include './header.html' %}
-    <h1>首页</h1>
-    <ul>
-        <li><a href="./flaskWebApi/user/alvin">访问jinja2页面</a></li>
-        <li><a href="./flaskWebApi/user/uuid">获取uuid值</a></li>
-    </ul>
+    <div class="content">
+        <script src="{{ url_for('static', filename='./vue.js') }}"></script>
+        {% include './common/header.html' %}
+        <div class="main-content">
+            <h1>首页</h1>
+            <ul>
+                <li><a href="./flaskWebApi/user/alvin">访问jinja2页面</a></li>
+                <li><a href="./flaskWebApi/user/uuid">获取uuid值</a></li>
+            </ul>
+        </div>
 
+        {% include './common/footer.html' %}
+    </div>
 
 
 
