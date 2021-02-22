@@ -3,7 +3,7 @@
 __Author__ = "Alvin Liu"
 
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect
 
 
 bp = Blueprint('index', __name__)
@@ -18,4 +18,5 @@ def index():
         - 首页
     """
     return render_template("./index.html")
+
 

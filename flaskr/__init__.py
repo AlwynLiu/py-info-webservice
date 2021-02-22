@@ -7,7 +7,7 @@ from .api import get_os_info
 from flasgger import Swagger
 import os
 
-from flask import Flask
+from flask import Flask, request, url_for, redirect
 from .api import auth
 app = Flask(__name__)
 
@@ -37,6 +37,16 @@ def create_app(test_config=None):
     app.register_blueprint(auth.bp)
 
     return app
+
+
+@app.before_request
+def is_login():
+    auth_cookie = request.cookies.get('auth_cookie')
+    if request.path == '/auth/login':
+        return None
+    if auth_cookie is None:
+        # return url_for('auth.loginSys')
+        return redirect(url_for('auth.loginSys'))
 
 #
 # from flask import Flask
