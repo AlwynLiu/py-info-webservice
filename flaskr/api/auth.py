@@ -1,6 +1,6 @@
 import functools
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, make_response, redirect
 from flasgger import Swagger
 
 # app = Flask(__name__)
@@ -33,3 +33,11 @@ def loginSys():
           data: success
     """
     return render_template('./auth/login.html')
+
+
+@bp.route('/account', methods=['get', 'post'])
+def account_login():
+    request.args.get('username')
+    request.args.get('password')
+    response = make_response(redirect('/'))
+    return response

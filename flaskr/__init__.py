@@ -46,7 +46,7 @@ def is_login():
         return None
     if auth_cookie is None:
         # return url_for('auth.loginSys')
-        return redirect(url_for('auth.loginSys'))
+        return redirect(url_for('auth.loginSys', current_url=request.url))
 
 #
 # from flask import Flask

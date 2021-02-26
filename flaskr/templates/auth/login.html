@@ -11,16 +11,17 @@
 
   <div style="width: 300px; height: 200px;">
     <h1>用户登录</h1>
-    <form action="/auth/login" method="post">
+    <form action="{{ url_for('auth.account_login') }}" method="post">
     <fieldset>
       <legend>用户名：</legend>
-      <input type="text" placeholder="请输入用户信息" style="width: 100%;">
+      <input name="username" type="text" placeholder="请输入用户信息" style="width: 100%;">
     </fieldset>
     <fieldset>
       <legend>密码：</legend>
-      <input type="password" placeholder="请输入密码" style="width: 100%;">
+      <input name="password" type="password" placeholder="请输入密码" style="width: 100%;">
     </fieldset>
     <button type="submit">登录</button>
+        <div>登录验证的地址：{{ url_for('auth.account_login') }}</div>
   </form>
   </div>
 </body>
