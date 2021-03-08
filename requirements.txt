@@ -1,7 +1,7 @@
-requests_html==0.10.0
-Flask_JSONRPC==0.3
-requests==2.22.0
+requests==2.25.1
 flasgger==0.9.5
-schedule==0.6.0
-Flask==1.0.2
-PyMySQL==0.9.3
+Flask==1.1.2
+flask_jsonrpc==1.1.0
+pymysql==1.0.2
+requests_html==0.10.0
+schedule==1.0.0
