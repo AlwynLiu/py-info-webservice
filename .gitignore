@@ -16,3 +16,4 @@ build/
 *.egg-info/
 
 */node_modules/
+/flaskr/plugin/读取excel文件/202102养固健内销明细.xlsx
