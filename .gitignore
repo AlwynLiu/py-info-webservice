@@ -17,3 +17,5 @@ build/
 
 */node_modules/
 /flaskr/plugin/读取excel文件/202102养固健内销明细.xlsx
+/flaskr/plugin/读excel写json文件/o365.json
+/flaskr/plugin/读excel写json文件/O365权限-20210317.xlsx

@@ -47,8 +47,6 @@ print('明细表的数据：', detail_sheet_json)
 import pymysql
 from popy.env import Env
 employee_purchase = Env.getCfg().Config.EMPLOYEE_PURCHASE_SYSTEM
-
-
 connection = pymysql.connect(employee_purchase['host'], employee_purchase['user'], employee_purchase['passwd'],
                              employee_purchase['db'])
 
