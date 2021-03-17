@@ -24,5 +24,5 @@ for i in range(2, detail_sheet.max_row + 1):
     detail_sheet_json.append(sub_data)
 print('明细表的数据：', detail_sheet_json)
 
-with open('./o365.json', "w+", encoding="utf-8") as  f:
-    f.write(json.dumps(detail_sheet_json))
+with open('./o365.json', "w+", encoding="utf-8") as f:
+    f.write(json.dumps(detail_sheet_json, ensure_ascii=False))
