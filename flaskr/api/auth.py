@@ -18,11 +18,11 @@ def loginSys():
     tags:
       - 登入登出
     parameters:
-      - userName: 
+      - userName:
         type: string
         required: true
         default: all
-      - password: 
+      - password:
         type: string
         required: true
         default: all
@@ -40,4 +40,5 @@ def account_login():
     request.args.get('username')
     request.args.get('password')
     response = make_response(redirect('/'))
+    response.set_cookie("auth_cookie", "login", max_age=3600)
     return response
