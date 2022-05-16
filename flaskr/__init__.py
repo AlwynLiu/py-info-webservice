@@ -4,6 +4,7 @@ from .api import flaskWebApi
 from .api import index
 from .api import get_os_info
 
+from flask_login import login_manager
 from flasgger import Swagger
 import os
 
@@ -41,12 +42,13 @@ def create_app(test_config=None):
 
 @app.before_request
 def is_login():
-    auth_cookie = request.cookies.get('auth_cookie')
-    if request.path == '/auth/login':
-        return None
-    if auth_cookie is None:
-        # return url_for('auth.loginSys')
-        return redirect(url_for('auth.loginSys', current_url=request.url))
+    pass
+    # auth_cookie = request.cookies.get('auth_cookie')
+    # if request.path == '/auth/login':
+    #     return None
+    # if auth_cookie is None:
+    #     # return url_for('auth.loginSys')
+    #     return redirect(url_for('auth.loginSys', current_url=request.url))
 
 #
 # from flask import Flask
