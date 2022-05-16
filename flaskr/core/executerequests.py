@@ -27,7 +27,7 @@ def popular_women():
 # def download_video():
 #     # session = HTMLSession()
 #     for i in range(10):
-#         url = '''https://e1v-h.phncdn.com/hls/videos/202004/14/303677802/,201211_1807_1080P_4000K,201211_1807_720P_4000K,201211_1807_480P_2000K,240P_400K,_303677802.mp4.urlset/seg-{}-f2-v1-a1.ts?validfrom=1617876085&validto=1617883285&ip=47.241.56.235&hdl=-1&hash=aGYAQ%2B1%2BP1TQM%2By4h0cwsJZ%2B03A%3D'''.format(i)
+#         url = ''''''.format(i)
 #         f = open('./1.ts', 'wb')
 #         result = requests.get(url)
 #         print(result.content)
@@ -35,7 +35,7 @@ def popular_women():
 #         f.close()
 
 
-# url = 'https://www.pornhub.com/video?o=ht'
+# url = ''
 # requestData(url)
 
 popular_women()
