@@ -8,8 +8,6 @@
 一个job2间隔2秒钟
 """
 
-
-
 import schedule
 import time
 import random
