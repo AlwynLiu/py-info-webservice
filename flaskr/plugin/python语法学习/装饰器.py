@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 __Author__ = "Alvin Liu"
+# 自定义装饰器
 
 from functools import wraps
 
